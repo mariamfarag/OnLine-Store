@@ -1,0 +1,345 @@
+﻿@model DALSevenCodeOnlineStore.Products
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+} 
+
+<div class="container">
+    <div >
+        <img style="width: -webkit-fill-available;" src="~/dist/img/photo2.png" />
+    </div>
+
+    @*========= card mm ===================*@
+  @*  <br />
+    <br />
+    <div class=" mt-6 row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card" style="height: 450px;width: 365px;">
+                <h3 class="m-3">Product 502</h3>
+                <img style="height: 242px;width: 365px;" src="~/dist/img/photo4.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="height: 450px; width: 365px;">
+                <h3 class="m-3">Product 504</h3>
+                <img style="height: 242px;width: 365px;" src="~/dist/img/landpage.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="height: 450px;width: 365px;">
+                <h3 class="m-3">Product 501</h3>
+                <img style="height: 242px;width: 365px;" src="~/dist/img/photo1.png" />
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+      
+    </div>*@
+    <br />
+    <br />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      @*  @foreach (var product in Model)
+        {*@
+            <div class="col">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <label style="font-size: 16px;color: steelblue">productName</label>
+                        </h4>
+                    </div>
+                <a href="@Url.Action("Index", "Checkout", new { Area = "Customer" })">
+                <img src="~/dist/img/photo4.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                </a>  
+                <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                            </div>
+                        <a asp-action="Details" asp-controller="Cart"  asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                            <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <a href="@Url.Action("Index", "Checkout", new { Area = "Customer" })">
+                <img src="~/dist/img/landpage.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" />
+               </a>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <a href="@Url.Action("Index", "Checkout", new { Area = "Customer" })">
+                <img src="~/dist/img/photo1.png" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                </a>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*}*@
+    </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+      @*  @foreach (var product in Model)
+        {*@
+            <div class="col">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <label style="font-size: 16px;color: steelblue">productName</label>
+                        </h4>
+                    </div>
+                <a href="@Url.Action("Index", "Checkout", new { Area = "Customer" })"> <img src="~/dist/img/photo4.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" /></a>
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                            </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                            <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <a href="@Url.Action("Index", "Checkout", new { Area = "Customer" })">
+                    <img src="~/dist/img/landpage.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" />
+               </a>
+                    <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <img src="~/dist/img/photo1.png" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*}*@
+    </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+      @*  @foreach (var product in Model)
+        {*@
+            <div class="col">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <label style="font-size: 16px;color: steelblue">productName</label>
+                        </h4>
+                    </div>
+                <img src="~/dist/img/photo4.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                            </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                            <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <img src="~/dist/img/landpage.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <img src="~/dist/img/photo1.png" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*}*@
+    </div>
+
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+      @*  @foreach (var product in Model)
+        {*@
+            <div class="col">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <label style="font-size: 16px;color: steelblue">productName</label>
+                        </h4>
+                    </div>
+                <img src="~/dist/img/photo4.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                            </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                            <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <img src="~/dist/img/landpage.jpg" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size: 16px;color: steelblue">productName</label>
+                    </h4>
+                </div>
+                <img src="~/dist/img/photo1.png" alt="Card Image" class="card-img-top" style="height: 300px;" />
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size: 20px;color: #a51313"><b>Price :  productPrice</b></label>
+                        </div>
+                        <a asp-action="Details" asp-controller="Cart" asp-area="Customer" class="btn pull-right btn-outline-info">Details</a>
+                        @*<a asp-action="Details" asp-controller="Cart" asp-route-id="productId" class="btn pull-right btn-outline-info">Details</a>*@
+                        <a asp-action="ProductDetailfavorite" asp-controller="Home" asp-route-id="productId" class="ml-1 btn pull-right btn-outline-info">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*}*@
+
+    </div>
+
+</div>

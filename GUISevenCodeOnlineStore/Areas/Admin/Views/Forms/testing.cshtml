@@ -1,0 +1,141 @@
+﻿@model IEnumerable<SelectListItem>
+@{
+    Layout = "/Areas/Admin/Views/shared/_AdminPageLayout.cshtml";
+}
+@{
+    Dictionary<int, string> items = new Dictionary<int, string>();
+    items.Add(key:1,value: "HTML");
+    items.Add(key: 2, value: "CSS");
+    items.Add(key: 3, value: "JavaScript");
+    items.Add(key: 4, value: "SQL");
+    items.Add(key: 5, value: "PHP");
+    items.Add(key: 6, value: "jQuery");
+    items.Add(key: 7, value: "Angular");
+    items.Add(key: 8, value: "ASP.NET");
+    items.Add(key: 9, value: "Bootstrap");
+}
+
+          
+                <div class="row m-4 ">
+                <div class="col-6 col-md-6 col-sm-6 ">
+                        <input class="form-control" id="inputval" name="" placeholder="Enter Name .." />
+                </div>
+                <div class="col-6 col-md-4 col-sm-6 ">
+                    <input class="form-control"
+                           type="text"
+                           id="txtitem"
+                           placeholder="Select Language"
+                           list="languageList" />
+                    <datalist id="languageList">
+                    @foreach (var item in items)
+                    { 
+                        <option data-id="@item.Key" value="@item.Value" />
+                    }
+                    </datalist>
+                  @*  <input class="form-control"
+                           type="text" 
+                           placeholder="Select Language" 
+                            list="languageList" />
+                    <datalist id="languageList"> 
+                        <option value="HTML" />
+                        <option value="CSS" />
+                        <option value="JavaScript" />
+                        <option value="SQL" />
+                        <option value="PHP" />
+                        <option value="jQuery" />
+                        <option value="Bootstrap" />
+                        <option value="Angular" />
+                        <option value="ASP.NET" />
+                        <option value="XML" />
+                    </datalist>*@
+                        
+                    </div>
+                    <div class="col-12 col-md-2 col-sm-12">
+                    <button onclick="showalert()" value="" name="" class="form-control btn btn-outline-danger">Show Message</button>
+                    </div>
+                </div>
+
+                   <div class="row m-4">
+                <div class="col-4">
+                    State:
+                    @Html.DropDownList("State",@Model,"Select Country",new {@class ="dropdown form-control" , onchange = "GetCity()"} )
+                </div>
+                <div class="col-4">
+                  City:
+                    <div id="_CityPartial"></div>
+                </div>
+                <div class="col-4"></div>
+                </div>
+
+             @*   <div class="row m-4">
+                <div class="col-4">
+                    <select class="form-control" id="Specific">
+                        <option value="nocup">
+                            Select one
+                        </option>
+                        <option value="frontend">
+                            FrontEnd
+                        </option>
+                        <option value="backend">
+                            BackEnd
+                        </option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <select class="form-control" id="None">
+                        <option>
+                            No selected
+                        </option>
+                    </select>
+                </div>
+                <div class="col-4"></div>
+                </div>*@
+    
+<script>
+    function showalert() {
+        var message = document.getElementById("inputval").value;
+        var itemselected = document.getElementById("txtitem").value;
+       // var option = itemselected.options[itemselected.selectedIndex];
+       // alert(option.id);
+       // var values = localStorage.getItem("idelement");
+      //  console.log("idddd"+document.getElementById("languageList").options.id)
+      // txt ==> input
+        var g = $('#txtitem').val();
+        //===  lang => datalist 
+        var id = $('#languageList option[value=' + g + ']').attr('data-id');
+        console.log(id);
+        alert("Hello " + message + "\n" + "Item Selected  =>" + itemselected + "\n" +"Id Item =>"+id);
+    }
+        //onchange="getid(this.Key)"
+    //function getid(id){
+    //    var i=localStorage.setItem("idelement",id);
+    //}
+
+    languages = { "frontend": ["HTML", "CSS","Javascript"], "backend": ["Dot Net", "C#", "API"] }
+    cup = document.getElementById("Specific");
+    cup.addEventListener("change", function () {
+
+        drink = document.getElementById("None")
+        drink.innerHTML = "";
+        if (cup.value != "nocup") {
+            for (var i = 0; i < languages[cup.value].length; i++) {
+                drink.innerHTML += "<option>" + languages[cup.value][i] + "</option>";
+            }
+        }
+        else {
+            drink.innerHTML = "<option>No selected</option>"
+        }
+
+    });
+
+    //========================================
+    $(document).ready(function(){
+        GetCity();
+    });
+    function GetCity()
+    {
+        $.get("/Admin/Forms/GetCity", { StateID: $("#State").val() }, function (data) {
+            $("#_CityPartial").html(data);
+        });
+    }
+</script>

@@ -1,0 +1,74 @@
+﻿@model DALSevenCodeOnlineStore.ApplicationUser
+@{
+    ViewData["Title"] = "Index-Login";
+    // Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<html lang="ar" dir="rtl">
+@*<html lang="en">*@
+<head>
+    <title>SevenCodeApps>> Online Store <<</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/dist/css/logincss.css" />
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    @*<div class="form-container mt-auto">*@
+    @*<h5 class="title">*@
+    @using (Html.BeginForm("loginmethoud", "Login", FormMethod.Post, new { @id = "loginForm", @class = "form-elements", @enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" placeholder="Email" asp-for="Email" class="form-control" required>
+            @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "has-error" })*@
+        </div>
+
+
+        <div class="form-group">
+            <label class="form-label" for="passwordInput">password</label>
+            <div class="input-group" id="passwordInput">
+                @*"PasswordHash"*@
+                <input class="form-control" type="password" placeholder="Password" asp-for="PasswordHash" required="required" oninvalid="this.setCustomValidity('يجب أدخال كلمه المرور')" onchange="this.setCustomValidity('')">
+                @*<a class="eyeIcon" href="">
+                        <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                    </a>*@
+            </div>
+        </div>
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="btn-container">
+            <button class="btn btn-primary"> Login </button>
+        </div>
+
+        <br /><br /><br />
+        <a href="~/Identity/Register" class="btn btn-gray">Create a new account</a>
+
+        @*</form>*@
+    }
+
+    @*</div>*@
+
+    <!--<form>
+        <h3>Login </h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <button>Log In</button>-->
+    @*<div class="social">
+            <div class="go"><i class="fab fa-google"></i>  Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>*@
+    <!--</form>-->
+</body>
+</html>

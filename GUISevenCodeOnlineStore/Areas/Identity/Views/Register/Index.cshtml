@@ -1,0 +1,45 @@
+﻿@model DALSevenCodeOnlineStore.ApplicationUser
+@{
+    ViewData["Title"] = "Index-Register";
+    // Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register New User</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/dist/css/RegisterCss.css" />
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    @*@using (Html.BeginForm(new { area = "Identity", controller = "Register", action = "RegisterNewUser" }))*@
+
+    @*// @using (Html.BeginForm("RegisterNewUser", "RegisterController", FormMethod.Post, new { @id = "RegisterForm", @class = "form-elements", @enctype = "multipart/form-data" }))*@
+    @using (Html.BeginForm("RegisterNewUser", "Register", FormMethod.Post, new { @id = "RegisterForm", @class = "form-elements", @enctype = "multipart/form-data" }))
+        {
+            <h3>Register</h3>
+
+            <label for="Email">Email</label>
+            <input type="text" placeholder="Email" asp-for="Email" id="Email" required>
+
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password" asp-for="PasswordHash" required="required" oninvalid="this.setCustomValidity('يجب أدخال كلمه المرور')" onchange="this.setCustomValidity('')">
+
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" placeholder="Confirm Password" id="confirmpassword">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+            @*<button type="submit" class="btn btn-default btn-flat">Sign out</button>*@
+            <button type="submit" class="btn btn-primary">Register</button>
+        }
+
+
+    </body>
+</html>

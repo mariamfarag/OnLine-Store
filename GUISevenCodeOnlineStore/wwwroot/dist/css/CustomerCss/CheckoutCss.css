@@ -1,0 +1,166 @@
+﻿/*===================== body mm =======================*/
+
+/*@media only screen and (max-width: 600px) {
+    .stylequery {
+        height: 780px !important;
+    }
+}*/
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+    .stylequery {
+        height: 1108px !important;
+    }
+    .imagestylecolsmall {
+        padding-right: 0px !important;
+        padding-left: 0px;
+        height: 500px;
+    }
+}
+/*================ form mm ==================*/
+        .formstyle {
+    padding: 49px;
+    background-color: white;
+    border-radius: 20px;
+}
+.formstylesecond {
+    border: 1px solid lightgray;
+    padding: 49px;
+    border-radius: 20px;
+    height: 100% !important;
+}
+/*============================== mm  count----------*/
+.createaccountstyle {
+    color: #ff4c3b;
+    font-family: Lato,sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+.createaccountstyle:hover  {
+   color: red !important;
+   font-weight: 600 !important;
+   text-decoration: none !important;
+ }
+/*============= two btn mm==========*/
+.paypal {
+    font-weight:bolder;
+    margin-top: 14px;
+    width: 100%;
+    padding: 10px;
+}
+.debit {
+    margin-top: 14px;
+    width: 100%;
+    padding: 10px;
+}
+.paystyle{
+    color:darkblue;
+}
+.palstyle {
+    color: cornflowerblue;
+}
+.colorred{
+    color:red;
+}
+/*============= cart mm =====================*/
+.btncontinueshop {
+    background-color: #ff4c3b;
+    color: white;
+    padding: 10px;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.btncontinueshop:hover  {
+    background-color:white !important;
+    color: #ff4c3b !important;
+}
+.btnindetails {
+    background-color: #ff4c3b;
+    color: white;
+    padding: 10px;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: bolder;
+    margin-top: 14px;
+}
+    .btnindetails:hover {
+        background-color: white;
+        color: #ff4c3b;
+        border: 1px solid #ff4c3b;
+    }
+/*===================== button increase and decrease m ========== */
+.increase {
+    width: 15%;
+    color: #ff4c3b;
+    border: 1px solid lightgray;
+}
+.decrease {
+    width: 15%;
+    color: #ff4c3b;
+    border: 1px solid lightgray;
+}
+.inputfield {
+    border: 1px solid lightgray;
+    padding: 1px;
+    margin: -4px;
+    text-align: center;
+    width: 50%;
+}
+/*================= btn 2 for cart show details mm ==========*/
+.btnindetailscartcheck {
+    background-color: #ff4c3b !important;
+    color: white;
+    padding: 10px;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 14px;
+    float:right;
+}
+.btnindetailscartcheck:hover {
+    background-color: white!important;
+    color: #ff4c3b!important;
+    border: 1px solid #ff4c3b!important;
+}
+.btnindetailscontinueshop {
+    background-color: #ff4c3b !important;
+    color: white;
+    padding: 10px;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 14px;
+    float: left;
+}
+.btnindetailscontinueshop:hover {
+    background-color: white!important;
+    color: #ff4c3b!important;
+    border: 1px solid #ff4c3b!important;
+}
+.imagestyle {
+    height: -webkit-fill-available !important;
+    width: -webkit-fill-available !important;
+}
+/*========== responsive container mm =============*/
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+      .containdetails {
+        padding: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+    .containcart {
+        /*margin: 0px !important;*/
+        padding: 0px !important;
+    }
+}
+
+

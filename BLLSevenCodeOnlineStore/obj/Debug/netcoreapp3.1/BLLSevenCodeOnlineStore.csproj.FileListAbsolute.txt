@@ -1,0 +1,13 @@
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\bin\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.deps.json
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\bin\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.dll
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\bin\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.pdb
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\bin\Debug\netcoreapp3.1\DALSevenCodeOnlineStore.dll
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\bin\Debug\netcoreapp3.1\DALSevenCodeOnlineStore.pdb
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.csproj.AssemblyReference.cache
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.GeneratedMSBuildEditorConfig.editorconfig
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.AssemblyInfoInputs.cache
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.AssemblyInfo.cs
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.csproj.CoreCompileInputs.cache
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.csproj.CopyComplete
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.dll
+E:\projects\OnlineStore\BLLSevenCodeOnlineStore\obj\Debug\netcoreapp3.1\BLLSevenCodeOnlineStore.pdb

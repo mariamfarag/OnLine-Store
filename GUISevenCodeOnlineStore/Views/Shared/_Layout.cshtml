@@ -1,0 +1,234 @@
+﻿@using DALSevenCodeOnlineStore
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    int count = 0;
+    List<Products> products = HttpContextAccessor.HttpContext.Session.Get<List<Products>>("products");
+    if (products==null)
+    {
+        products=new List<Products>();
+    }
+    count = products.Count();
+}
+   @*//===================================== mm count favorite ===============*@
+@*
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GUISevenCodeOnlineStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GUISevenCodeOnlineStore</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+                                asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - GUISevenCodeOnlineStore - <a asp-area="" asp-controller="Home"
+                asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
+*@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer</title>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/dist/css/adminlte.css">
+    <link href="~/dist/css/landpagecss/landpageeng.css" rel="stylesheet" />
+</head>
+
+<body class="bodystyleArabic hold-transition sidebar-mini">
+
+    <div style="display: grid;" class="wrapper">
+        <!-- Default dropright button -->
+     @*   <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                Dropright
+            </button>
+            <div class="dropdown-menu">
+                <a href="#">Products</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+       *@
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <nav style="z-index: 1;position: fixed;width: -webkit-fill-available;" class="landpage main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav barhead">
+
+                <li class="nav-item headerdesign">
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                    @*<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                    class="fas fa-bars"></i></a>*@
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="@Url.Action("Index", "Home", new { Area = "Customer" })" class="nav-link">Customer</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="@Url.Action("Index", "Home", new { Area = "Admin" })" class="nav-link">Admin</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="@Url.Action("Index", "Home", new { Area = "" })" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+
+            </ul>
+
+            <ul class="navbar-nav barstyle social_notificationbar">
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                        <span><i class="fas fa-shopping-cart"></i></span>
+                        <p style="color: #ff4c3b !important;color: #ff4c3b !important;font-weight: 600; margin-top: -39px; margin-left: 18px;">@count</p>
+                    </a>
+                </li>
+                @*===================================== mm favorite ==========================================*@
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Customer" asp-controller="Home" asp-action="Favorite">
+                        <i class="fas fa-heart"></i>
+                        <p style="color: #ff4c3b !important;color: #ff4c3b !important;  margin-top: -39px; margin-left: 18px;font-weight: 600;">1</p>
+                    </a>
+                </li>
+                <li class="nav-item mt-1 ml-2 mr-2">
+                    <div id="myclick">
+                        <a onclick="getelement(1)" style="float: left !important;color: #6c757d;cursor:pointer;
+                                    border:1px solid #6c757d;border-radius: 6px;padding: 5px 45px 5px 45px;">
+                            Arabic
+                        </a>
+                    </div>
+                </li>
+                @*================ mm ==============*@
+            <li class="nav-item">
+                @*<button class="buttonLogoutAdmin">Login</button>*@
+                <a href="@Url.Action("Index", "Login", new { Area = "Identity" })" class="buttonLogoutAdmin">@*btncontinueshop*@
+                    Login
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+        <div>
+            <div class="content-wrapper landpage">
+                <div class="content-header">
+                    <div class="container-fluid">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <strong class="copyrightArabic">Copyright &copy; 2023 <a href="https://www.sevencodeapps.com">7Code Apps</a>.</strong>
+            @* All rights reserved.*@
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 1.1.0
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript">
+        function getelement(id) {
+            console.log("Id => " + id)
+            localStorage.setItem("IdWhenChangeArabic", id);
+            console.log("Local Storage => " + localStorage.getItem("IdWhenChangeArabic"));
+            location.reload();
+        }
+        //===================== on load ================
+        $(document).ready(function () {
+            var x = localStorage.getItem("IdWhenChangeArabic");
+            if (x == 1) {
+                document.head.innerHTML += '<link rel="stylesheet" href="/dist/css/CompositeStyle.css"> <link href="/dist/css/landpagecss/landpagearabic.css" rel="stylesheet" />';
+                console.log("in finishing if ", localStorage.getItem("IdWhenChangeArabic"));
+                document.getElementById('myclick').innerHTML =
+                    "<a  onclick='getelement(2)'style='float: left!important; color: #6c757d;border: 1px solid #6c757d; border-radius: 6px; padding: 5px 45px 5px 45px;'>English</a>";
+            }
+            else {
+                document.head.innerHTML += '<link rel="stylesheet" href="/dist/css/adminlte.css"> ';
+                document.getElementById('myclick').innerHTML =
+                    "<a  onclick='getelement(1)'style='float: left!important; color: #6c757d;border: 1px solid #6c757d; border-radius: 6px; padding: 5px 45px 5px 45px;'>Arabic</a>";
+            }
+        });
+        //====================   =======================
+        function changeCSS(cssFile, cssLinkIndex) {
+            var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+            var newlink = document.createElement("link");
+            newlink.setAttribute("rel", "stylesheet");
+            newlink.setAttribute("type", "text/css");
+            newlink.setAttribute("href", cssFile);
+            document.getElementsByTagName("head").item(cssLinkIndex).replaceChild(newlink, oldlink);
+
+        }
+        //================ new mmm ==================
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SevenCodeApps | Dashboard </title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/dist/css/adminlte.css">
+    @* //<link href="~/dist/css/custom.css" rel="stylesheet" />*@
+</head>
+
+<body class="bodystyleArabic hold-transition sidebar-mini">
+
+    <div style="display: grid;" class="wrapper">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav navspacestyle">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="@Url.Action("Index", "Home", new { Area = "Customer" })" class="nav-link">Customer</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="@Url.Action("Index", "Home", new { Area = "Admin" })" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+                <li> </li>
+            </ul>
+
+            @* <a id="myclick" onclick="changeCSS('/dist/css/CompositeStyle.css', 0);"  asp-area="Admin" asp-controller="HomeArabic" asp-action="Index" style="float: left !important;color: #6c757d;
+            border:1px solid #6c757d;border-radius: 6px;padding: 5px 45px 5px 45px;">Arabic</a>*@
+
+            <ul class="navbar-nav barstyle social_notificationbar">
+                <li class="nav-item mt-1 ml-2 mr-2">
+                    <div id="myclick">
+                        <a onclick="getelement(1)" style="float: left !important;color: #6c757d;cursor:pointer;
+                                    border:1px solid #6c757d;border-radius: 6px;padding: 5px 45px 5px 45px;">
+                            Arabic
+                        </a>
+                    </div>
+                </li>
+                @*================ mm ==============*@
+            <li class="nav-item">
+                @*@using (Html.BeginForm("LogoutMethoud", "Login", FormMethod.Post, new { @id = "logOutForm", @class = "form-elements" }))*@
+                @*@using (Html.BeginForm("LogoutMethoud", "Login", new { area = "Identity" }, FormMethod.Post, new { id = "logOutForm" }))
+
+                @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))*@
+
+                @using (Html.BeginForm(new { area = "Identity", controller = "Login", action = "LogoutMethoud" }))
+                {
+                @*<a href="@Url.Action("Index", "Home", new { Area = "Admin" })" class="brand-link">*@
+                <button type="submit" class="btn btn-default btn-flat">Sign out</button>
+                }
+
+            </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-comments"></i>
+                        <span class="badge badge-danger navbar-badge">3</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <a href="#" class="dropdown-item">
+
+                            <div class="media">
+                                <img src="~/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Brad Diesel
+                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Call me whenever you can...</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+
+                            <div class="media">
+                                <img src="~/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        John Pierce
+                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">I got your message bro</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+
+                            <div class="media">
+                                <img src="~/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Nora Silvester
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">The subject goes here</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i> 8 friend requests
+                            <span class="float-right text-muted text-sm">12 hours</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i> 3 new reports
+                            <span class="float-right text-muted text-sm">2 days</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+            <a href="@Url.Action("Index", "Home", new { Area = "Admin" })" class="brand-link">
+                <img src="~/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">7Code Apps</span>
+            </a>
+
+            <div class="sidebar">
+
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="~/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Samy Alsayed</a>
+                    </div>
+                </div>
+
+                @*<div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>*@
+
+                <nav class="mt-2 sidebarstyle">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Admin Cpanel
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Home", new { Area = "Admin" })" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Admin Home</p>
+                                    </a>
+                                </li>
+                                @*======================== mm Login && Register ===============*@
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Login", new { Area = "Identity" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Login</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Register", new { Area = "Identity" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Register</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "products", new { Area = "Admin" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>product</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Register", new { Area = "Identity" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>orders</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Register", new { Area = "Identity" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Category</p>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Forms
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Forms", new { Area = "Admin" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Advanced Elements</p>
+                                    </a>
+                                </li>
+                                @*================== mm ====================*@
+                                <li class="nav-item">
+                                    <a href="@Url.Action("testing", "Forms", new { Area = "Admin" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Test</p>
+                                    </a>
+                                </li>
+                                @*================== mm2 Products ====================*@
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Products", new { Area = "Admin" })" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Products</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+
+        </aside>
+
+        <div>
+            <div class="content-wrapper">
+                <div class="content-header">
+                    <div class="container-fluid">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <strong class="copyrightArabic">Copyright &copy; 2023 <a href="https://adminlte.io">7Code Apps</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.2.0
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/dist/js/adminlte.js"></script>
+
+
+    <script src="~/plugins/chart.js/Chart.min.js"></script>
+
+    <script src="~/dist/js/demo.js"></script>
+
+    <script src="~/dist/js/pages/dashboard3.js"></script>
+
+    <script type="text/javascript">
+        // var xx = localStorage.getItem("IdWhenChangeArabic");
+        function getelement(id) {
+            console.log("Id => " + id)
+            localStorage.setItem("IdWhenChangeArabic", id);
+            //document.getElementById("of head/body tag")
+            //    .innerHTML += '<link rel="stylesheet" type="text/css" href="~/dist/css/custom.css">';
+            console.log("Local Storage => " + localStorage.getItem("IdWhenChangeArabic"));
+            location.reload();
+        }
+        //===================== on load ================
+        $(document).ready(function () {
+            var x = localStorage.getItem("IdWhenChangeArabic");
+            if (x == 1) {
+                document.head.innerHTML += '<link rel="stylesheet" href="/dist/css/CompositeStyle.css">';
+                console.log("in finishing if ", localStorage.getItem("IdWhenChangeArabic"));
+                document.getElementById('myclick').innerHTML =
+                    "<a  onclick='getelement(2)'style='float: left!important; color: #6c757d;border: 1px solid #6c757d; border-radius: 6px; padding: 5px 45px 5px 45px;'>English</a>";
+                //localStorage.setItem("IdWhenChangeArabic",2);
+            }
+            else {
+                document.head.innerHTML += '<link rel="stylesheet" href="/dist/css/adminlte.css">';
+                document.getElementById('myclick').innerHTML =
+                    "<a  onclick='getelement(1)'style='float: left!important; color: #6c757d;border: 1px solid #6c757d; border-radius: 6px; padding: 5px 45px 5px 45px;'>Arabic</a>";
+                //  localStorage.setItem("IdWhenChangeArabic", 1);
+            }
+        });
+        //====================   =======================
+        function changeCSS(cssFile, cssLinkIndex) {
+            var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+            var newlink = document.createElement("link");
+            newlink.setAttribute("rel", "stylesheet");
+            newlink.setAttribute("type", "text/css");
+            newlink.setAttribute("href", cssFile);
+            document.getElementsByTagName("head").item(cssLinkIndex).replaceChild(newlink, oldlink);
+            // document.getElementsByTagName("head")[0].appendChild(newSS);
+        }
+                //$('#myclick').click(function () {
+                //    getelement(id){
+                //        id=1;
+                //        localStorage.setItem("ArabicRTL", id);
+                //    }
+                //});
+    </script>
+
+</body>
+</html>
